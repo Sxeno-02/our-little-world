@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little World ❤️</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+    <main class="dashboard">
+        <header class="top">
+            <h1>🤍 Our Little World</h1>
+            <button class="logout" id="logoutBtn">Logout</button>
+        </header>
+
+        <section class="welcome">
+            <h2 id="welcomeMessage">Welcome, love! 🤍</h2>
+            <p>This is our little corner of the internet — just for us. 💕</p>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <div class="card-icon">📸</div>
+                <h3>Our Memories</h3>
+                <p>Our favorite moments together.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💌</div>
+                <h3>Love Notes</h3>
+                <p>Little messages for each other.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Our Timeline</h3>
+                <p>Our story from the beginning.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎵</div>
+                <h3>Our Songs</h3>
+                <p>Songs that remind us of each other.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💭</div>
+                <h3>Our Plans</h3>
+                <p>Things we want to do together.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤍</div>
+                <h3>About Us</h3>
+                <p>Our story, our memories, our world.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Show the name saved by the login page.
+        const name = sessionStorage.getItem("loveName");
+
+        if (!name) {
+            window.location.replace("index.html");
+        } else {
+            document.getElementById("welcomeMessage").textContent =
+                "Welcome, " + name + " 🤍";
+        }
+
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            sessionStorage.removeItem("loveName");
+            window.location.replace("index.html");
+        });
+    </script>
+</body>
+</html>
